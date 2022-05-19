@@ -27,18 +27,18 @@ const App = () => {
   )
 }
 
-const Header = ({ course }) => <h1>{course}</h1>
+const Header = props => <h1>{props.course}</h1>
 
-const Content = ({ parts }) => {
+const Content = props => {
   return (
     <>
-      {parts.map(part => <Part key={part.name} part={part.name} exercises={part.exercises} />)}
+      {props.parts.map(part => <Part key={part.name} part={part.name} exercises={part.exercises} />)}
     </>
   )
 }
 
-const Part = ({ part, exercises }) => <p>{part} {exercises} </p>
+const Part = props => <p>{props.part} {props.exercises} </p>
 
-const Total = ({ parts }) => <p>Number of exercises {parts[0].exercises + parts[1].exercises + parts[2].exercises}</p>
+const Total = props => <p>Number of exercises {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}</p>
 
 export default App
